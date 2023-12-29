@@ -3,7 +3,11 @@ const axios = require('axios');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+    origin: 'https://domin-ccgtlv0zg-tiaolegous-projects.vercel.app', // 你的前端应用的域名
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.post('/query-domain', async (req, res) => {
