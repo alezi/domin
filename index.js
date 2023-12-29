@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 
 const corsOptions = {
-    origin: 'https://domin-ccgtlv0zg-tiaolegous-projects.vercel.app', // 你的前端应用的域名
+    origin: 'https://domin-lemon.vercel.app', // 你的前端应用的域名
     optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
@@ -30,3 +30,4 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
