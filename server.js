@@ -6,6 +6,13 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static('.')); // 用于托管 HTML 文件
 
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+  });
+  
+
+
 app.post('/query-domain', async (req, res) => {
     const { domain } = req.body;
     const [name, suffix] = domain.split('.');
