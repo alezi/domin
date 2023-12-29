@@ -4,8 +4,10 @@ const cors = require('cors');
 const app = express();
 
 const corsOptions = {
-    origin: 'https://domin-lemon.vercel.app', // 你的前端应用的域名
-    optionsSuccessStatus: 200
+    origin: 'https://domin-lemon.vercel.app/query-domain', // 你的前端应用的域名
+    methods: ['GET', 'POST'],
+    optionsSuccessStatus: 200,
+    credentials: true,
 };
 app.use(cors(corsOptions));
 app.use(express.json());
