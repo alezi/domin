@@ -4,15 +4,18 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static('.')); // 用于托管 HTML 文件
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
   });
+
   
 
 
+// 处理域名查询的 API 请求
 app.post('/query-domain', async (req, res) => {
     const { domain } = req.body;
     const [name, suffix] = domain.split('.');
